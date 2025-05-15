@@ -106,7 +106,24 @@
     transform: scale(1.1);
     transition: 0.3s;
 }
+@media (max-width: 1200px) {
+  .contact {
+    margin: 60px 80px;
+  }
 
+  .contact-left h1 {
+    font-size: 60px;
+  }
+
+  .contact-title h1 {
+    font-size: 60px;
+  }
+
+  .contact-right input,
+  .contact-right textarea {
+    width: 100%;
+  }
+}
 /* Responsive Styles */
 
 
@@ -149,22 +166,3 @@
   }
 }
 
-@media (max-width: 480px) {
-  .contact-title h1,
-  .contact-left h1 {
-    font-size: 36px;
-  }
-
-  .contact-left p {
-    font-size: 16px;
-  }
-
-  .contact-details {
-    font-size: 18px;
-  }
-
-  .contact-submit {
-    padding: 16px;
-    font-size: 18px;
-  }
-}
