@@ -1,4 +1,4 @@
-.mywork{
+.mywork {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,44 +6,53 @@
     gap: 80px;
     margin: 80px 170px;
 }
-.mywork-title{
-    position: relative;
 
+.mywork-title {
+    position: relative;
 }
-.mywork-title h1{
+
+.mywork-title h1 {
     padding: 0px 30px;
     font-size: 80px;
     font-weight: 600;
+    text-align: center;
 }
-.mywork-title img{
+
+.mywork-title img {
     position: absolute;
     bottom: 0;
     right: 0;
     z-index: -1;
+    max-width: 100%;
+    height: auto;
 }
-.mywork-container{
+
+.mywork-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;
 }
-.mywork-container img{
+
+.mywork-container img {
     box-sizing: border-box;
-    width: 419px;
-    height: 280px;
+    width: 100%;
+    max-width: 419px;
+    height: auto;
+    aspect-ratio: 3/2;
     cursor: pointer;
     transition: 0.3s ease;
-
 }
-.mywork-container img:hover{
-transform: rotate(360deg) scale(0.7);
-  transition: all .98s cubic-bezier(0.48, -0.6, 0.32, 1.8);
 
+.mywork-container img:hover {
+    transform: rotate(360deg) scale(0.7);
+    transition: all 0.98s cubic-bezier(0.48, -0.6, 0.32, 1.8);
 }
-.showmore{
+
+.showmore {
     display: flex;
     gap: 15px;
     border-radius: 50px;
-    border: 2px solid  white;
+    border: 2px solid white;
     padding: 20px 40px;
     font-size: 22px;
     font-weight: 500;
@@ -51,7 +60,53 @@ transform: rotate(360deg) scale(0.7);
     transition: 0.6s;
     cursor: pointer;
 }
-.showmore:hover{
+
+.showmore:hover {
     gap: 30px;
-    transition:  0.6s;
+    transition: 0.6s;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .mywork {
+        margin: 60px 80px;
+    }
+
+    .mywork-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .mywork {
+        margin: 40px 30px;
+        gap: 60px;
+    }
+
+    .mywork-title h1 {
+        font-size: 50px;
+        padding: 0 20px;
+    }
+
+    .mywork-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .showmore {
+        font-size: 18px;
+        padding: 16px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mywork-title h1 {
+        font-size: 36px;
+    }
+
+    .showmore {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
 }
