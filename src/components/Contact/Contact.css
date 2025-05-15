@@ -145,9 +145,10 @@
         width: 50%;
         text-align: center;
     }
-/*     .contact-right{
+    .contact-right{
         margin: 20px;
-    } */
+        width: 80%;
+    }
 
     .contact-right input,
 .contact-right textarea {
