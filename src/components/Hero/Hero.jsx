@@ -20,7 +20,16 @@ const Hero = () => {
   </a>
 </div>
 
-            <div className="hero-resume">My Resume</div>
+            <div className="hero-resume">
+  <a 
+    href="/Rohit Kumar.docx" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    My Resume
+  </a>
+</div>
+
         </div>
         </div>
   )
