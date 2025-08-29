@@ -75,6 +75,16 @@
     border-color: #B415FF;
 }
 
+.hero-resume a {
+  color: #1a73e8;  /* Google blue */
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hero-resume a:hover {
+  color: #ff5733;  /* orange on hover */
+}
+
 /* Optional: media queries for very small screens */
 @media (max-width: 480px) {
     .hero h1 {
