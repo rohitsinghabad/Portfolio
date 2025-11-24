@@ -1,5 +1,5 @@
-import project1_img from '../assets/project1.jpg'
-import project2_img from '../assets/project2.jpg'
+import project1_img from '../assets/Project1.jpg'
+import project2_img from '../assets/Project2.jpg'
 import project3_img from '../assets/project_3.svg'
 import project4_img from '../assets/project_4.svg'
 import project5_img from '../assets/project_5.svg'
