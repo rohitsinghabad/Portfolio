@@ -47,7 +47,7 @@ const Contact = () => {
           <div className="contact-details">
             <div className="contact-detail">
               <img src={mail_icon} alt="" />
-              <p>rohitsinghrajputabad@gmail.com</p>
+              <p>rohitkumarsingh1168@gmail.com</p>
             </div>
             <div className="contact-detail">
               <img src={call_icon} alt="" />
@@ -55,7 +55,7 @@ const Contact = () => {
             </div>
             <div className="contact-detail">
               <img src={location_icon} alt="" />
-              <p>Bhopal, Madhya Pradesh, India</p>
+              <p>Pune, India</p>
             </div>
           </div>
         </div>
