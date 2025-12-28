@@ -1,3 +1,16 @@
+/* ===== THEME VARIABLES (SAME GLOBAL THEME) ===== */
+:root {
+  --bg-main: #0b0d10;
+  --bg-glass: rgba(255, 255, 255, 0.06);
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+  --border-soft: rgba(255, 255, 255, 0.15);
+
+  --accent-primary: linear-gradient(135deg, #00f5ff 0%, #8b5cf6 100%);
+  --accent-secondary: linear-gradient(135deg, #8b5cf6 0%, #ff4ecd 100%);
+}
+
+/* ===== ABOUT SECTION ===== */
 .about {
   display: flex;
   flex-direction: column;
@@ -5,77 +18,121 @@
   align-items: center;
   gap: 80px;
   margin: 80px 170px;
+  color: var(--text-main);
+  background: transparent;
 }
 
+/* ===== TITLE ===== */
 .about-title {
   position: relative;
   margin: 40px;
 }
 
 .about-title h1 {
-  padding: 0px 30px;
+  padding: 0 30px;
   font-size: 80px;
   font-weight: 600;
+  background: linear-gradient(120deg, #00f5ff, #8b5cf6, #ff4ecd);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+/* Optional glow decoration */
 .about-title img {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -10px;
+  right: -10px;
   z-index: -1;
+  opacity: 0.25;
+  filter: blur(2px);
+}
+.about-para p:last-child::after {
+  content: "|";
+  margin-left: 4px;
+  color: #00f5ff;
+  animation: blink 1s infinite;
 }
 
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+/* ===== LAYOUT ===== */
 .about-section {
   display: flex;
   gap: 80px;
 }
 
+/* ===== LEFT IMAGE ===== */
+.about-left img {
+  margin: 30px;
+  width: 110%;
+  height: 90%;
+  border-radius: 22px;
+  border: 1px solid var(--border-soft);
+  box-shadow:
+    0 0 35px rgba(0, 245, 255, 0.25),
+    0 0 60px rgba(139, 92, 246, 0.15);
+}
+
+/* ===== RIGHT CONTENT ===== */
 .about-right {
   display: flex;
   flex-direction: column;
   gap: 80px;
 }
 
-.about-left img {
-  width: 45%;
-}
-
+/* ===== PARAGRAPH ===== */
 .about-para {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 400;
+  color: var(--text-muted);
 }
 
+/* ===== SKILLS ===== */
 .about-skills {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
 }
 
 .about-skill {
   display: flex;
   gap: 50px;
   align-items: center;
-  transition: 0.4s ease;
+  transition: transform 0.3s ease;
+}
+
+.about-skill:hover {
+  transform: translateX(6px);
 }
 
 .about-skill p {
   min-width: 150px;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 500;
+  color: var(--text-main);
 }
 
 .about-skill hr {
-  outline: none;
   border: none;
   width: 50%;
   height: 8px;
   border-radius: 50px;
-  background: linear-gradient(264deg, #df8908 -5.08%, #b415ff 106.28%);
+  background: var(--accent-primary);
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
 }
 
+/* ===== ACHIEVEMENTS ===== */
 .about-achievements {
   display: flex;
   width: 100%;
@@ -88,200 +145,96 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  transition: 0.5s;
+  padding: 20px 30px;
+  border-radius: 18px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-soft);
+  transition: all 0.4s ease;
+}
+
+.about-achievement:hover {
+  transform: translateY(-6px) scale(1.08);
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.35);
 }
 
 .about-achievement h1 {
   font-size: 60px;
   font-weight: 700;
-  background: linear-gradient(270deg, #df8908 50.41%, #b415ff 90.25%);
+  background: linear-gradient(135deg, #00f5ff, #8b5cf6);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .about-achievement p {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 500;
+  color: var(--text-muted);
 }
 
+/* ================= RESPONSIVE ================= */
 
-
-.about-achievement:hover {
-  transform: scale(1.15);
-  transition: 0.5s;
-}
-
-.about-left img {
-  margin: 30px;
-  width: 110%;
-  height: 90%;  
-  border-radius: 20px;
-  border: 2px solid white; 
-}
-
-/* Responsive Styles */
 @media (max-width: 1200px) {
   .about {
     margin: 80px 100px;
   }
-  
+
   .about-title h1 {
     font-size: 70px;
-  }
-  
-  .about-section {
-    gap: 60px;
-  }
-  
-  .about-para, .about-skill p {
-    font-size: 22px;
-  }
-  
-  .about-achievement h1 {
-    font-size: 50px;
-  }
-  
-  .about-achievement p {
-    font-size: 20px;
   }
 }
 
 @media (max-width: 992px) {
   .about {
     margin: 60px 70px;
-    gap: 60px;
   }
-  
-  .about-title h1 {
-    font-size: 60px;
-  }
-  
+
   .about-section {
     flex-direction: column;
   }
-  
+
   .about-left {
-    width: 100%;
     display: flex;
     justify-content: center;
   }
-  
+
   .about-left img {
     width: 80%;
     height: auto;
     margin: 0;
-  }
-  
-  .about-right {
-    gap: 60px;
-  }
-  
-  .about-skill {
-    gap: 30px;
-  }
-  
-  .about-skill hr {
-    width: 40%;
   }
 }
 
 @media (max-width: 768px) {
   .about {
     margin: 50px 40px;
-    gap: 50px;
   }
-  
+
   .about-title h1 {
     font-size: 50px;
-    padding: 0 20px;
   }
-  
-  .about-para, .about-skill p {
-    font-size: 20px;
-  }
-  
-  .about-skill p {
-    min-width: 120px;
-  }
-  
+
   .about-achievements {
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 10px;
   }
-  
+
   .about-achievement {
-    width: 45%;
-  }
-  
-  .about-achievement h1 {
-    font-size: 45px;
-  }
-  
-  .about-achievement p {
-    font-size: 18px;
+    width: 35%;
   }
 }
 
 @media (max-width: 576px) {
   .about {
     margin: 40px 20px;
-    gap: 40px;
   }
-  
-  .about-title h1 {
-    font-size: 40px;
-    padding: 0 15px;
-  }
-  
-  .about-section {
-    gap: 40px;
-  }
-  
-  .about-right {
-    gap: 40px;
-  }
-  
-  .about-para, .about-skill p {
-    font-size: 18px;
-  }
-  
-  .about-skill {
-    gap: 20px;
-  }
-  
-  .about-skill p {
-    min-width: 100px;
-  }
-  
-  .about-skill hr {
-    height: 6px;
-  }
-  
+
   .about-achievement {
     width: 100%;
-    
   }
-  
-  .about-achievement h1 {
-    font-size: 40px;
-  }
-  
-  .about-left img {
-    width: 60%;
-  }
-}
 
-@media (max-width: 400px) {
-  .about-title h1 {
-    font-size: 36px;
-  }
-  
-  .about-para, .about-skill p {
-    font-size: 16px;
-  }
-  
-  .about-skill p {
-    min-width: 80px;
+  .about-left img {
+    width: 65%;
   }
 }

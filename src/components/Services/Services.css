@@ -1,3 +1,4 @@
+/* ===== SERVICES SECTION ===== */
 .services {
   display: flex;
   flex-direction: column;
@@ -5,8 +6,10 @@
   justify-content: center;
   gap: 80px;
   margin: 80px 170px;
+  color: #e5e7eb;
 }
 
+/* ===== TITLE ===== */
 .services-title {
   position: relative;
   text-align: center;
@@ -16,72 +19,101 @@
   padding: 0 30px;
   font-size: 80px;
   font-weight: 600;
-}
-
-.services-title img {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-  max-width: 100%;
-  height: auto;
-}
-
-/* --- Card Format --- */
-.services-format {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-  padding: 60px;
-  border: 2px solid #ffffff;
-  transition: 0.4s;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.services-format h3 {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.services-format h2 {
-  font-size: 34px;
-  font-weight: 800;
-  background: linear-gradient(270deg, #df8908 50%, #b415ff 100%);
-  background-clip: text;
+  background: linear-gradient(
+    120deg,
+    #00f5ff,
+    #8b5cf6,
+    #ff4ecd
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.services-format p {
-  color: #d4d4d4;
-  font-size: 22px;
-  max-width: 300px;
+.services-title img {
+  position: absolute;
+  bottom: -10px;
+  right: 10px;
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(2px);
 }
 
-.read-more {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.services-format:hover {
-  border: 2px solid #ff00ff;
-  background-image: linear-gradient(45deg, #3f0028, #582300);
-  transform: scale(1.1);
-}
-
-/* --- Grid Container --- */
+/* ===== SERVICES GRID ===== */
 .services-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
   margin-bottom: 80px;
+  width: 100%;
 }
 
-/* ---------- RESPONSIVE STYLES ---------- */
+/* ===== SERVICE CARD ===== */
+.services-format {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  padding: 48px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+  transition: all 0.35s ease;
+}
+
+/* ===== CARD INDEX ===== */
+.services-format h3 {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #9ca3af;
+}
+
+/* ===== CARD TITLE ===== */
+.services-format h2 {
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(
+    135deg,
+    #00f5ff,
+    #8b5cf6
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== CARD TEXT ===== */
+.services-format p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #9ca3af;
+  max-width: 320px;
+}
+
+/* ===== READ MORE ===== */
+.read-more {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #00f5ff;
+  margin-top: 12px;
+  transition: gap 0.3s ease;
+}
+
+.services-format:hover .read-more {
+  gap: 22px;
+}
+
+/* ===== HOVER EFFECT ===== */
+.services-format:hover {
+  transform: translateY(-10px);
+  border-color: rgba(0, 245, 255, 0.4);
+  box-shadow: 0 18px 60px rgba(0, 245, 255, 0.15);
+}
+
+/* ================= RESPONSIVE ================= */
 
 /* Tablet */
 @media (max-width: 1024px) {
@@ -95,19 +127,7 @@
   }
 
   .services-container {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .services-format {
-    padding: 40px;
-  }
-
-  .services-format h2 {
-    font-size: 28px;
-  }
-
-  .services-format p {
-    font-size: 20px;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -119,7 +139,7 @@
   }
 
   .services-title h1 {
-    font-size: 40px;
+    font-size: 42px;
     padding: 0 10px;
   }
 
@@ -128,19 +148,14 @@
   }
 
   .services-format {
-    padding: 30px;
+    padding: 32px 24px;
   }
 
   .services-format h2 {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   .services-format p {
-    font-size: 18px;
-  }
-
-  .read-more {
-    gap: 12px;
     font-size: 16px;
   }
 }

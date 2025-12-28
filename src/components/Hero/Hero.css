@@ -1,109 +1,144 @@
+:root {
+  --bg-main: #0b0d10;
+  --text-main: #e5e7eb;
+  --text-muted: #9ca3af;
+
+  --accent-primary: linear-gradient(135deg, #00f5ff 0%, #8b5cf6 100%);
+  --accent-secondary: #ff4ecd;
+
+  --border-soft: rgba(255, 255, 255, 0.15);
+}
 .hero {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 35px;
-    padding: 0 20px; /* Add padding for small screens */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 35px;
+  padding: 0 20px;
+  background: transparent;
+  color: var(--text-main);
 }
 
 .hero img {
-    border: 2px solid white;
-    border-radius: 50%;
-    height: 300px;
-    width: 300px;
-    margin-top: 100px;
-    max-width: 90%;
+  border: 2px solid var(--border-soft);
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+  margin-top: 100px;
+  max-width: 90%;
+  box-shadow: 
+    0 0 40px rgba(0, 245, 255, 0.25),
+    0 0 80px rgba(139, 92, 246, 0.15);
 }
 
+/* ===== HEADING ===== */
 .hero h1 {
-    text-align: center;
-    width: 100%;
-    font-size: 7vw; /* Responsive font size */
-    font-weight: 600;
-    line-height: 1.2;
+  text-align: center;
+  width: 100%;
+  font-size: 7vw;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .hero h1 span {
-    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: linear-gradient(
+    120deg,
+    #00f5ff,
+    #8b5cf6,
+    #ff4ecd
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+/* ===== DESCRIPTION ===== */
 .hero p {
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-    font-size: 18px;
-    line-height: 32px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 32px;
+  color: var(--text-muted);
 }
 
+/* ===== ACTION BUTTONS ===== */
 .hero-action {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    font-size: 18px;
-    font-weight: 500;
-    margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 30px;
 }
 
-.hero-connect,
-.hero-resume {
-    padding: 12px 24px;
-    border-radius: 50px;
-    cursor: pointer;
-    text-align: center;
-}
-
+/* ===== PRIMARY BUTTON ===== */
 .hero-connect {
-    background: linear-gradient(274deg, #DF8908 -5.08%, #B415FF 106.28%);
-    color: white;
-}
-
-.hero-resume {
-    border: 2px solid white;
-    color: white;
+  padding: 14px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  text-align: center;
+  background: var(--accent-primary);
+  color: #000;
+  border: none;
+  transition: all 0.35s ease;
+  box-shadow: 0 0 25px rgba(0, 245, 255, 0.4);
 }
 
 .hero-connect:hover {
-    border: 2px solid white;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 45px rgba(139, 92, 246, 0.6);
+}
+
+/* ===== SECONDARY BUTTON ===== */
+.hero-resume {
+  padding: 14px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+  border: 1px solid var(--border-soft);
+  backdrop-filter: blur(10px);
+  transition: all 0.35s ease;
 }
 
 .hero-resume:hover {
-    border-color: #B415FF;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.4);
 }
 
+/* ===== RESUME LINK ===== */
 .hero-resume a {
-  color: #1a73e8;  /* Google blue */
+  color: #00f5ff;
   font-weight: 600;
   text-decoration: none;
 }
 
 .hero-resume a:hover {
-  color: #ff5733;  /* orange on hover */
+  color: #ff4ecd;
 }
 
-/* Optional: media queries for very small screens */
+/* ===== MOBILE OPTIMIZATION ===== */
 @media (max-width: 480px) {
-    .hero h1 {
-        font-size: 10vw;
-    }
+  .hero h1 {
+    font-size: 10vw;
+  }
 
-    .hero p {
-        font-size: 16px;
-        line-height: 28px;
-    }
+  .hero p {
+    font-size: 16px;
+    line-height: 28px;
+  }
 
-    .hero img {
-        height: 200px;
-        width: 200px;
-    }
+  .hero img {
+    height: 200px;
+    width: 200px;
+  }
 
-    .hero-connect,
-    .hero-resume {
-        width: 100%;
-        max-width: 300px;
-    }
+  .hero-connect,
+  .hero-resume {
+    width: 100%;
+    max-width: 300px;
+  }
 }

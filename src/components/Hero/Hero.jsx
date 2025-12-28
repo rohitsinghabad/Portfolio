@@ -1,6 +1,6 @@
 import React from 'react'
 import './Hero.css'
-import profile_img from '../../assets/prop124.png'
+import profile_img from '../../assets/prop122.png'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 const Hero = () => {
   return (
@@ -22,7 +22,7 @@ const Hero = () => {
 
             <div className="hero-resume">
   <a 
-    href="/Rohit Kumar.pdf" 
+    href="/Rohit_Kumar(resume).pdf" 
     target="_blank" 
     rel="noopener noreferrer"
   >
